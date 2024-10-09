@@ -79,7 +79,7 @@ case $choice in
 esac
 
 
-# verifying if the user gives the ports range
+
 
 echo " ____  ____   ___   ____ _____ ____ ____ ___ _   _  ____ 
 |  _ \|  _ \ / _ \ / ___| ____/ ___/ ___|_ _| \ | |/ ___|
@@ -109,9 +109,10 @@ count=0
             echo "Port $port: Open" >> ports.txt
             
         fi
-    count=$((count+1))  # Increment the counter
-    if [ $((count % 20)) -eq 0 ]; then  # After every 20 iterations
-        sleep 10 	# Wait for 2 seconds
+#to bypass requests number issue
+    count=$((count+1))  
+    if [ $((count % 20)) -eq 0 ]; then  
+        sleep 10 	
         count=0
     fi
     done
